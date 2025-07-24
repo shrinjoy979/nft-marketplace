@@ -18,7 +18,7 @@ pub mod marketplace {
         ctx.accounts.initialize_marketplace(fee_percentage, ctx.bumps)
     }
 
-    pub fn listing(
+    pub fn list_nft(
         ctx: Context<ListNFT>,
         price: u64,
     ) -> Result<()> {
@@ -26,6 +26,3 @@ pub mod marketplace {
         ctx.accounts.initialize_listing(price, ctx.bumps)
     }
 }
-
-#[derive(Accounts)]
-pub struct Initialize {}
