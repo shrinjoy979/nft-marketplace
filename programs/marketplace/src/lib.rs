@@ -15,8 +15,15 @@ pub mod marketplace {
         ctx: Context<InitializeMarketplace>,
         fee_percentage: u8
     ) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
-        Ok(())
+        ctx.accounts.initialize_marketplace(fee_percentage, ctx.bumps)
+    }
+
+    pub fn listing(
+        ctx: Context<ListNFT>,
+        price: u64,
+    ) -> Result<()> {
+        ctx.accounts.transfer_nft()?;
+        ctx.accounts.initialize_listing(price, ctx.bumps)
     }
 }
 
