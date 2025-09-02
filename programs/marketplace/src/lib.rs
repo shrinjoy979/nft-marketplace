@@ -38,5 +38,8 @@ pub mod marketplace {
     ) -> Result<()> {
         ctx.accounts.transfer_nft()
         // ctx.accounts.transfer_sol()
+
+        // ctx.accounts.transfer_nft()?;
+        // ctx.accounts.transfer_sol()
     }
 }
